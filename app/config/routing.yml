@@ -1,0 +1,7 @@
+gabi77_platform:
+    resource: "@Gabi77PlatformBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
