@@ -1,3 +1,7 @@
+oc_platform:
+    resource: "@OCPlatformBundle/Resources/config/routing.yml"
+    prefix:   /platform
+
 gabi77_platform:
     resource: "@Gabi77PlatformBundle/Resources/config/routing.yml"
     prefix:   /
