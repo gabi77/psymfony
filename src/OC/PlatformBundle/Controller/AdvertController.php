@@ -23,7 +23,7 @@ class AdvertController extends Controller
     // Ici, on récupérera la liste des annonces, puis on la passera au template
 
     // Mais pour l'instant, on ne fait qu'appeler le template
-    return $this->render('OCPlatformBundle:Advert:index.html.twig');
+    return $this->render('OCPlatformBundle:Advert:index.html.twig', array('nom' => 'JANEZ'));
   }
 
   public function viewAction($id)
@@ -74,5 +74,17 @@ class AdvertController extends Controller
     // Ici, on gérera la suppression de l'annonce en question
 
     return $this->render('OCPlatformBundle:Advert:delete.html.twig');
+  }
+
+
+  public function mailAction()
+  {
+    $contenu = $this->renderView('OCPlatformBundle:Advert:email.txt.twig', array(
+      'pseudo' => "gabi77",
+      'mon_commentaire' => "sdfls kfdk dsk lfkdl mkmlfk sdlkml"
+    ));
+
+    // Puis on envoie l'e-mail, par exemple :
+    mail('gabriel_janez@hotmail.com', 'Inscription OK', $contenu);
   }
 }
